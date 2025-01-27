@@ -1,3 +1,5 @@
+
+/* eslint-disable */
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -36,6 +38,7 @@ export default function RootLayout({
           <div className="flex gap-5 justify-center">
             <a href="/about" className="text-xl">About</a>
             <a href="/profile" className="text-xl">Profile</a>
+            <a href="/quote" className="text-xl">Quote Generator</a>
           </div>
         </div>
 

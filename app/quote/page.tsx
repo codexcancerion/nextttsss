@@ -4,19 +4,20 @@
 import { useEffect, useState } from "react"
 
 export default function Page() {
-  const [participants, setParticipants] = useState()
+  const [quote, setQuote] = useState()
   
   const handleFetch = async () => {
-    const result = await fetch('/api/getData')
+    const result = await fetch('https://nxttt.vercel.app/api/generateQuote')
     const data = await result.json()
-    setParticipants(data.data)
+    setQuote(data.quote)
   }
+  
 
   return (
     <div className="flex flex-col w-full h-screen items-center justify-center" id="div">
-      <h1 className="text-4xl">{participants}</h1>
+      <h1 className="text-4xl">{quote}</h1>
 
-      <button onClick={handleFetch}>Fetch Participants</button>
+      <button onClick={handleFetch}>Generate Quote</button>
     </div>
   )
 }
